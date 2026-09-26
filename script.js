@@ -21,10 +21,16 @@ next.onclick = function () {
 };
 
 prev.onclick = function () {
+
+    // Find the current active circle
+    let activeCircle = document.querySelector(".circle.active");
+
+    // Remove active from it
+    activeCircle.classList.remove("active");
+
     step--;
 
-    circles[step].classList.remove("active");
-
+    // Keep the progress line correct
     progress.style.width = ((step - 1) * 25) + "%";
 
     next.disabled = false;
