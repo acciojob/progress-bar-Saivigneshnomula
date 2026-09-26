@@ -7,6 +7,9 @@ let circles = document.querySelectorAll(".circle");
 let progress = document.getElementById("progress");
 
 next.onclick = function () {
+
+    circles[step - 1].classList.remove("active");
+
     step++;
 
     circles[step - 1].classList.add("active");
@@ -21,9 +24,12 @@ next.onclick = function () {
 };
 
 prev.onclick = function () {
+
     circles[step - 1].classList.remove("active");
 
     step--;
+
+    circles[step - 1].classList.add("active");
 
     progress.style.width = ((step - 1) * 25) + "%";
 
