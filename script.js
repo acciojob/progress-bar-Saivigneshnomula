@@ -1,15 +1,17 @@
-//your JS code here. If required.
 let step = 1;
 
 let next = document.getElementById("next");
 let prev = document.getElementById("prev");
 
 let circles = document.querySelectorAll(".circle");
+let progress = document.getElementById("progress");
 
 next.onclick = function () {
     step++;
 
     circles[step - 1].classList.add("active");
+
+    progress.style.width = ((step - 1) * 25) + "%";
 
     prev.disabled = false;
 
@@ -22,6 +24,8 @@ prev.onclick = function () {
     circles[step - 1].classList.remove("active");
 
     step--;
+
+    progress.style.width = ((step - 1) * 25) + "%";
 
     next.disabled = false;
 
