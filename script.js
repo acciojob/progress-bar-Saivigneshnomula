@@ -21,9 +21,9 @@ next.onclick = function () {
 };
 
 prev.onclick = function () {
-    circles[step - 1].classList.remove("active");
-
     step--;
+
+    circles[step].classList.remove("active");
 
     progress.style.width = ((step - 1) * 25) + "%";
 
